@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
-import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Grid, Typography } from "@mui/material";
-
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: 'black',
-    padding: theme.spacing(2),
-    textAlign: 'left',
-    color: 'white',
-}));
 
 
 export function Home() {
@@ -33,15 +25,6 @@ export function Home() {
                     </Grid>
                 </Grid>
             </Paper>
-            {/* <Link to="decide-food">
-                <button>Decide what to cook</button>
-            </Link><br />
-            <Link to="decide-music">
-                <button>Decide what to listen to</button>
-            </Link><br />
-            <Link to="/">
-                <button>Third button</button>
-            </Link> */}
     </div>
     );
 }
