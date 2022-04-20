@@ -2,8 +2,6 @@ import { Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const API_KEY = process.env.REACT_APP_SPOONACULAR_KEY
-
 interface FoodProps {
     diet: string;
     dishType: string;
@@ -15,7 +13,7 @@ export function ShowFood(props: FoodProps) {
 
     useEffect(() => {
         axios
-            .get(`https://api.spoonacular.com/recipes/random?limitLicense=true&tags=${props.diet},${props.dishType}&=1&apiKey=${API_KEY}`)
+            .get(`http://localhost:3000/api/spoonacular/recipes/random?limitLicense=true&tags=${props.diet},${props.dishType}&number=1`)
             .then((response) => {
                 setRecipe(response.data);
             });
