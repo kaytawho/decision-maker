@@ -1,13 +1,14 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DecideFood } from './components/DecideFoodPage';
-import { Home } from './components/HomePage';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
-import theme from './components/Theme'
+import { Home } from './components/HomePage';
+import { DecideFood } from './components/DecideFoodPage';
+import { DecideMusic } from './components/DecideMusicPage';
+import theme from './components/Theme';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
-import { DecideMusic } from './components/DecideMusicPage';
+
 
 
 

@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { DecideFood } from "./DecideFoodPage";
+
 const API_KEY = process.env.REACT_APP_SPOONACULAR_KEY
 
 interface FoodProps {
