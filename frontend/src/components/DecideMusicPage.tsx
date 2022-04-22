@@ -4,7 +4,7 @@ import { ShowMusic } from "./ShowMusic";
 
 export function DecideMusic() {
     const [musicQuery, setMusicQuery] = useState("");
-    const [currentMusicQuery, setCurrentMusicQuery] = useState("disco");
+    const [currentMusicQuery, setCurrentMusicQuery] = useState("");
 
 
     return (
