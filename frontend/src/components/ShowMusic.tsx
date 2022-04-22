@@ -1,9 +1,5 @@
 import { Typography } from "@mui/material";
-import axios from "axios";
 import { useEffect, useState } from "react";
-
-// const api_key = process.env.REACT_APP_DEEZER_KEY
-
 
 interface MusicQueryProps {
     musicQuery: string;
@@ -11,15 +7,6 @@ interface MusicQueryProps {
 
 export function ShowMusic(props: MusicQueryProps) {
     const [musicQuery, setMusicQuery] = useState<any>(null);
-
-    useEffect(() => {
-        axios
-            .get(`https://api.allorigins.win/raw?url=https://api.deezer.com/search/playlist?q=${props.musicQuery}`)
-            .then((response) => {
-                setMusicQuery(response.data);
-                console.log(response.data)
-            });
-    }, [props.musicQuery]);
 
     return (
         <div>
