@@ -11,14 +11,6 @@ interface FoodProps {
 export function ShowFood(props: FoodProps) {
     const [recipe, setRecipe] = useState<any>(null);
 
-    useEffect(() => {
-        axios
-            .get(`http://localhost:3000/api/spoonacular/recipes/random?limitLicense=true&tags=${props.diet},${props.dishType}&number=1`)
-            .then((response) => {
-                setRecipe(response.data);
-            });
-    }, [props.diet, props.dishType]);
-
     return (
         <div>
             {recipe ? (
