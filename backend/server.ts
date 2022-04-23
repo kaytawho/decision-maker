@@ -42,6 +42,7 @@ app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: R
             });
 });
 
+
 app.get("/api/themoviedb/3/search/movie", (req: Request<any, any, any, any>, res: Response<any>) => {
     let searchParams = new URLSearchParams(req.query);
     searchParams.append(`api_key`, process.env.THEMOVIEDB_KEY)
@@ -51,8 +52,12 @@ app.get("/api/themoviedb/3/search/movie", (req: Request<any, any, any, any>, res
     axios
         .get(`https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`)
         .then((response) => {
-            res.json(response.data);
-            console.log(response.data)
+            if (response.data && response.data.results) {
+                let randomiser = Math.floor((Math.random() * response.data.results.length));
+                res.json(response.data.results[randomiser]);
+            } else {
+                res.status(404).json({error: 'No results found'})
+            }
         });
 });
 
