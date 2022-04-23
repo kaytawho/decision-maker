@@ -28,19 +28,21 @@ app.get("/api/spoonacular/recipes/random", (req: Request<any, any, any, any>, re
             });
 });
 
-
 app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: Response<any>) => {
     let searchParams = new URLSearchParams(req.query);
     const url = `https://api.deezer.com/search/playlist?${searchParams.toString()}`
     console.log(url)
 
-    let randomiser = Math.floor((Math.random() * 25));
-
     axios
             .get(`https://api.deezer.com/search/playlist?${searchParams.toString()}`)
             .then((response) => {
-                res.json(response.data.data[randomiser]);
-                console.log(response.data.data[randomiser])
+                if (response.data && response.data.data) {
+                    let randomiser = Math.floor((Math.random() * response.data.data.length));
+                    res.json(response.data.data[randomiser]);
+                } else {
+                    res.status(404).json({error: 'No results found'})
+                }
+                // console.log('the response in server.ts', response.data.data[randomiser])
             });
 });
 

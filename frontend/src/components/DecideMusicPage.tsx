@@ -3,8 +3,8 @@ import { useState } from "react";
 import { ShowMusic } from "./ShowMusic";
 
 export function DecideMusic() {
-    const [musicQuery, setMusicQuery] = useState("");
-    const [currentMusicQuery, setCurrentMusicQuery] = useState("disco");
+    const [musicQuery, setMusicQuery] = useState("disco");
+    const [currentMusicQuery, setCurrentMusicQuery] = useState("");
 
 
     return (
