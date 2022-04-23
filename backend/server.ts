@@ -61,6 +61,20 @@ app.get("/api/themoviedb/3/search/movie", (req: Request<any, any, any, any>, res
         });
 });
 
+// TODO
+// app.get("/api/themoviedb/3/configuration", (req: Request<any, any, any, any>, res: Response<any>) => {
+//     let searchParams = new URLSearchParams(req.query);
+//     searchParams.append(`api_key`, process.env.THEMOVIEDB_KEY)
+//     const url = `https://api.themoviedb.org/3/configuration?${searchParams.toString()}`
+//     console.log(url)
+
+//     axios
+//         .get(`https://api.themoviedb.org/3/configuration?${searchParams.toString()}`)
+//         .then((response) => {
+//             res.json(response.data);
+//         });
+// });
+
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "..", "frontend", "build")));
