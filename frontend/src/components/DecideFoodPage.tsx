@@ -17,6 +17,7 @@ export function DecideFood() {
                         <select name="dishType"
                                 onChange={(event: any) => {
                                 setDishType(event.target.value);
+                                console.log(event.target.value)
                             }}>
                             <option value="breakfast">Breakfast</option>
                             <option value="lunch">Lunch</option>
