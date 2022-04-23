@@ -23,7 +23,7 @@ export function Navigation() {
                 <Item><a href="/">Home</a></Item>
                 <Item><a href="/decide-food">Eat</a></Item>
                 <Item><a href="/decide-music">Listen</a></Item>
-                <Item>Watch</Item>
+                <Item><a href="/decide-movie">Watch</a></Item>
         </Box>
         </div>
     )

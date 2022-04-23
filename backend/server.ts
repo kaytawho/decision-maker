@@ -11,9 +11,6 @@ const app = express();
 app.set("trust proxy", 1);
 app.use(express.json()); 
 
-// app.get("/api/test", (req: Request<any, any, any, any>, res: Response<any>) => {
-//     res.json({ date: new Date().toString() });
-// });
 
 app.get("/api/spoonacular/recipes/random", (req: Request<any, any, any, any>, res: Response<any>) => {
     let searchParams = new URLSearchParams(req.query);
@@ -41,6 +38,19 @@ app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: R
             .then((response) => {
                 res.json(response.data.data[randomiser]);
                 console.log(response.data.data[randomiser])
+            });
+});
+
+app.get("/api/themoviedb/3/search/movie", (req: Request<any, any, any, any>, res: Response<any>) => {
+    let searchParams = new URLSearchParams(req.query);
+    searchParams.append(`api_key`, process.env.THEMOVIEDB_KEY)
+    const url = `https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`
+    console.log(url)
+
+    axios
+            .get(`https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`)
+            .then((response) => {
+                res.json(response.data);
             });
 });
 
