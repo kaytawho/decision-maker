@@ -8,7 +8,6 @@ interface MusicQueryProps {
 
 export function ShowMusic(props: MusicQueryProps) {
     const [musicQuery, setMusicQuery] = useState<any>(""); // change to musicResult
-    console.log(musicQuery)
 
     function getPlaylist() {
         axios
