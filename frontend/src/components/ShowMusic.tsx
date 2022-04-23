@@ -7,17 +7,21 @@ interface MusicQueryProps {
 }
 
 export function ShowMusic(props: MusicQueryProps) {
-    const [musicQuery, setMusicQuery] = useState<any>(null);
-    console.log(musicQuery)
+    const [musicQuery, setMusicQuery] = useState<any>(""); // change to musicResult
 
-
-    useEffect(() => {
+    function getPlaylist() {
         axios
             .get(`http://localhost:3000/api/deezer/search/playlist?q=${props.musicQuery}`)
             .then((response) => {
                 setMusicQuery(response.data);
-                console.log(response.data)
+                console.log('the response on ShowMusic', response.data)
             });
+    }
+    useEffect(() => {
+        if (props.musicQuery !== '') {
+            getPlaylist()
+        }
+
     }, [props.musicQuery]);
 
     return (
@@ -27,7 +31,7 @@ export function ShowMusic(props: MusicQueryProps) {
                     <Typography variant="h5">{musicQuery.title}</Typography>
                     <img src={musicQuery.picture_big} height={250} width={460} alt={musicQuery.title}/><br />
                     <a href={musicQuery.link} target="_blank" rel="noopener noreferrer">Listen</a><br />
-                    <button> Next playlist</button>
+                    <button onClick={getPlaylist}> Next playlist</button>
                 </div>
             ) : (
                 <div>No playlist here</div>

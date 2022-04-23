@@ -10,12 +10,18 @@ interface FoodProps {
 export function ShowFood(props: FoodProps) {
     const [recipe, setRecipe] = useState<any>(null);
 
-    useEffect(() => {
+    function getRecipe() {
         axios
             .get(`http://localhost:3000/api/spoonacular/recipes/random?limitLicense=true&tags=${props.diet},${props.dishType}&number=1`)
             .then((response) => {
                 setRecipe(response.data);
             });
+    }
+
+    useEffect(() => {
+        if (props.diet && props.dishType !== '') {
+            getRecipe()
+        }
     }, [props.diet, props.dishType]);
 
     return (
@@ -25,7 +31,7 @@ export function ShowFood(props: FoodProps) {
                     <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
                     <img src={recipe.recipes[0]["image"]} height={250} width={460} alt={recipe.recipes[0]["image"]}/><br />
                     <a href={recipe.recipes[0]["spoonacularSourceUrl"]} target="_blank" rel="noopener noreferrer">Make this recipe</a><br />
-                    <button> Next recipe</button>
+                    <button onClick={getRecipe}> Next recipe</button>
                 </div>
             ) : (
                 <div>No recipe here</div>
