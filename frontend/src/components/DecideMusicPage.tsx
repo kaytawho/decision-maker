@@ -4,7 +4,7 @@ import { ShowMusic } from "./ShowMusic";
 
 export function DecideMusic() {
     const [musicQuery, setMusicQuery] = useState("");
-    const [currentMusicQuery, setCurrentMusicQuery] = useState("");
+    const [currentMusicQuery, setCurrentMusicQuery] = useState("disco");
 
 
     return (
@@ -18,7 +18,6 @@ export function DecideMusic() {
                     }}></input>
                     <button onClick={(event: any) => {
                         setCurrentMusicQuery(musicQuery)
-                        console.log(musicQuery)
                     }}>Decide</button>
                 </Paper>
                 </Grid>
