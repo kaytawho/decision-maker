@@ -8,9 +8,8 @@ interface MovieQueryProps {
 
 export function ShowMovie(props: MovieQueryProps) {
     const [movieQuery, setMovieQuery] = useState<any>("");
+    // const [movieImage, setMovieImage] = useState<any>("") // TODO
     console.log(movieQuery)
-
-    // http://localhost:3000/api/themoviedb/3/search/movie?api_key=bdd2d7954699bd994d5dba7a8665e5ce&query=jaws
 
     function getMovie() {
         axios
@@ -20,9 +19,19 @@ export function ShowMovie(props: MovieQueryProps) {
             });
     }
 
+    // TODO
+    // function getMovieImage() {
+    //     axios
+    //         .get(`http://localhost:3000/api/themoviedb/3/configuration`)
+    //         .then((response) => {
+    //             setMovieImage(response.data);
+    //         });
+    // }
+
     useEffect(() => {
         if (props.movieQuery !== '') {
             getMovie()
+            // getMovieImage()
     }
 }, [props.movieQuery]);
 
