@@ -3,8 +3,8 @@ import { useState } from "react";
 import { ShowMovie } from "./ShowMovie";
 
 export function DecideMovie() {
-    const [movieQuery, setMovieQuery] = useState("");
-    const [currentMovieQuery, setCurrentMovieQuery] = useState("moonlight");
+    const [movieQuery, setMovieQuery] = useState("moonlight");
+    const [currentMovieQuery, setCurrentMovieQuery] = useState("");
 
     return (
         <div>
@@ -14,10 +14,11 @@ export function DecideMovie() {
                     <Typography variant="h5">Pick me an movie tagged: </Typography>
                     <input name="movie-query" onChange={(event: any) => {
                         setMovieQuery(event.target.value);
-                        console.log(event.target.value)
+                        console.log('setMovieQuery:',event.target.value)
                     }}></input>
                     <button onClick={(event: any) => {
                         setCurrentMovieQuery(movieQuery)
+                        console.log('setCurrentMovieQuery:',movieQuery)
                     }}>Decide</button>
                 </Paper>
                 </Grid>

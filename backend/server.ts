@@ -19,10 +19,10 @@ app.get("/api/spoonacular/recipes/random", (req: Request<any, any, any, any>, re
     console.log(url)
 
     axios
-            .get(`https://api.spoonacular.com/recipes/random?${searchParams.toString()}`)
-            .then((response) => {
-                res.json(response.data);
-            });
+        .get(`https://api.spoonacular.com/recipes/random?${searchParams.toString()}`)
+        .then((response) => {
+            res.json(response.data);
+        });
 });
 
 app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: Response<any>) => {
@@ -31,15 +31,14 @@ app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: R
     console.log(url)
 
     axios
-            .get(`https://api.deezer.com/search/playlist?${searchParams.toString()}`)
-            .then((response) => {
-                if (response.data && response.data.data) {
-                    let randomiser = Math.floor((Math.random() * response.data.data.length));
-                    res.json(response.data.data[randomiser]);
-                } else {
-                    res.status(404).json({error: 'No results found'})
-                }
-                // console.log('the response in server.ts', response.data.data[randomiser])
+        .get(`https://api.deezer.com/search/playlist?${searchParams.toString()}`)
+        .then((response) => {
+            if (response.data && response.data.data) {
+                let randomiser = Math.floor((Math.random() * response.data.data.length));
+                res.json(response.data.data[randomiser]);
+            } else {
+                res.status(404).json({error: 'No results found'})
+            }
             });
 });
 
@@ -50,10 +49,11 @@ app.get("/api/themoviedb/3/search/movie", (req: Request<any, any, any, any>, res
     console.log(url)
 
     axios
-            .get(`https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`)
-            .then((response) => {
-                res.json(response.data);
-            });
+        .get(`https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`)
+        .then((response) => {
+            res.json(response.data);
+            console.log(response.data)
+        });
 });
 
 
