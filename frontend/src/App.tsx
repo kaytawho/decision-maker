@@ -8,6 +8,7 @@ import { DecideMusic } from './components/DecideMusicPage';
 import theme from './components/Theme';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import { DecideMovie } from './components/DecideMoviePage';
 
 
 
@@ -36,6 +37,14 @@ function DecideMusicPage() {
   );
 }
 
+function DecideMoviePage() {
+  return (
+    <div>
+      <DecideMovie />
+    </div>
+  );
+}
+
 function App() {
   return (
     <div>
@@ -47,6 +56,7 @@ function App() {
                 <Route path="/" element={<HomePage />}/>
                 <Route path="/decide-food" element={<DecideFoodPage />}/>
                 <Route path="/decide-music" element={<DecideMusicPage />}/>
+                <Route path="/decide-movie" element={<DecideMoviePage />}/>
               </Routes>
           </BrowserRouter>
         </CssBaseline>

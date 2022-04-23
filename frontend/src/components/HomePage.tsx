@@ -19,8 +19,8 @@ export function Home() {
                         <Link to="decide-music">
                             <button>Decide what to listen to</button>
                         </Link><br />
-                        <Link to="/">
-                            <button>Third button</button>
+                        <Link to="/decide-movie">
+                            <button>Decide what to watch</button>
                         </Link>
                     </Grid>
                 </Grid>
