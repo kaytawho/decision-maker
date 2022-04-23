@@ -34,10 +34,13 @@ app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: R
     const url = `https://api.deezer.com/search/playlist?${searchParams.toString()}`
     console.log(url)
 
+    let randomiser = Math.floor((Math.random() * 25));
+
     axios
             .get(`https://api.deezer.com/search/playlist?${searchParams.toString()}`)
             .then((response) => {
-                res.json(response.data);
+                res.json(response.data.data[randomiser]);
+                console.log(response.data.data[randomiser])
             });
 });
 
