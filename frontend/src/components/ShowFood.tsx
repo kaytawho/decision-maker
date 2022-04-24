@@ -1,6 +1,9 @@
-import { Typography } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+import { Button, Card, CardActions, CardContent, CardMedia, Icon, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import theme from "./Theme";
 
 interface FoodProps {
     diet: string;
@@ -28,10 +31,38 @@ export function ShowFood(props: FoodProps) {
         <div>
             {recipe ? (
                 <div>
-                    <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
-                    <img src={recipe.recipes[0]["image"]} height={250} width={460} alt={recipe.recipes[0]["image"]}/><br />
-                    <a href={recipe.recipes[0]["spoonacularSourceUrl"]} target="_blank" rel="noopener noreferrer">Make this recipe</a><br />
-                    <button onClick={getRecipe}> Next recipe</button>
+                    <ThemeProvider theme={theme}>
+                        <Card>
+                            <CardMedia
+                                component="img"
+                                height="250"
+                                image={recipe.recipes[0]["image"]}
+                                alt={recipe.recipes[0]["image"]}
+                                />
+                                <CardContent>
+                                    <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
+                                    <Typography variant="body1">Serves: {recipe.recipes[0]["servings"]}</Typography>
+                                    <Typography variant="body1">Ready in: {recipe.recipes[0]["readyInMinutes"]} minutes</Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Box m="auto">
+                                        <Button
+                                                sx={{ my: 1, mx: 1 }}
+                                                style={{ backgroundColor: '#536DFE' }}
+                                                variant="contained"
+                                                href={recipe.recipes[0]["spoonacularSourceUrl"]}
+                                                target="_blank"
+                                        > Make recipe</Button>
+                                        <Button
+                                                sx={{ my: 1, mx: 1 }}
+                                                style={{ backgroundColor: '#536DFE' }}
+                                                variant="contained"
+                                                onClick={getRecipe}
+                                        > Next recipe</Button>
+                                    </Box>
+                                </CardActions>
+                        </Card>
+                    </ThemeProvider>
                 </div>
             ) : (
                 <div>No recipe here</div>
