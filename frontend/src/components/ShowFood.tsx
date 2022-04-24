@@ -41,23 +41,21 @@ export function ShowFood(props: FoodProps) {
                                 />
                                 <CardContent>
                                     <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
-                                    <Typography variant="body1">Serves: {recipe.recipes[0]["servings"]}</Typography>
-                                    <Typography variant="body1">Ready in: {recipe.recipes[0]["readyInMinutes"]} minutes</Typography>
                                 </CardContent>
                                 <CardActions>
                                     <Box m="auto">
                                         <Button
-                                                sx={{ my: 1, mx: 1 }}
-                                                style={{ backgroundColor: '#536DFE' }}
-                                                variant="contained"
-                                                href={recipe.recipes[0]["spoonacularSourceUrl"]}
-                                                target="_blank"
+                                            sx={{ my: 1, mx: 1 }}
+                                            style={{ backgroundColor: '#536DFE' }}
+                                            variant="contained"
+                                            href={recipe.recipes[0]["spoonacularSourceUrl"]}
+                                            target="_blank"
                                         > Make recipe</Button>
                                         <Button
-                                                sx={{ my: 1, mx: 1 }}
-                                                style={{ backgroundColor: '#536DFE' }}
-                                                variant="contained"
-                                                onClick={getRecipe}
+                                            sx={{ my: 1, mx: 1 }}
+                                            style={{ backgroundColor: '#536DFE' }}
+                                            variant="contained"
+                                            onClick={getRecipe}
                                         > Next recipe</Button>
                                     </Box>
                                 </CardActions>
