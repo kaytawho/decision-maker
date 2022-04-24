@@ -10,13 +10,13 @@ interface MusicQueryProps {
 }
 
 export function ShowMusic(props: MusicQueryProps) {
-    const [musicQuery, setMusicQuery] = useState<any>(""); // change to musicResult
+    const [musicResult, setMusicResult] = useState<any>("");
 
     function getPlaylist() {
         axios
             .get(`http://localhost:3000/api/deezer/search/playlist?q=${props.musicQuery}`)
             .then((response) => {
-                setMusicQuery(response.data);
+                setMusicResult(response.data);
                 console.log('the response on ShowMusic', response.data)
             });
     }
@@ -29,18 +29,18 @@ export function ShowMusic(props: MusicQueryProps) {
 
     return (
         <div>
-            {musicQuery ? (
+            {musicResult ? (
                 <div>
                     <ThemeProvider theme={theme}>
                         <Card>
                             <CardMedia
                                 component="img"
                                 height="250"
-                                image={musicQuery.picture_big}
-                                alt={musicQuery.picture_big}
+                                image={musicResult.picture_big}
+                                alt={musicResult.picture_big}
                             />
                             <CardContent>
-                                <Typography variant="h5">{musicQuery.title}</Typography>
+                                <Typography variant="h5">{musicResult.title}</Typography>
                             </CardContent>
                             <CardActions>
                                 <Box m="auto">
@@ -48,7 +48,7 @@ export function ShowMusic(props: MusicQueryProps) {
                                         sx={{ my: 1, mx: 1 }}
                                         style={{ backgroundColor: '#536DFE' }}
                                         variant="contained"
-                                        href={musicQuery.link}
+                                        href={musicResult.link}
                                         target="_blank"
                                     >Listen</Button>
                                     <Button
