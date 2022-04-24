@@ -66,7 +66,7 @@ export function DecideFood() {
                     </Paper>
                 </Grid>
                 <Grid item>
-                    <Paper style={{ height: 400, width: 500, background: "white", color: "black", padding: 20}}>
+                    <Paper style={{ height: "100%", width: 500, background: "white", color: "black", padding: 20}}>
                         <ShowFood dishType={currentDishType} diet={currentDiet} />
                     </Paper>
                 </Grid>
