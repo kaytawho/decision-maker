@@ -1,6 +1,9 @@
-import { Typography } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+import { Button, Card, CardActions, CardContent, CardMedia, Icon, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import theme from "./Theme";
 
 interface MusicQueryProps {
     musicQuery: string;
@@ -28,10 +31,36 @@ export function ShowMusic(props: MusicQueryProps) {
         <div>
             {musicQuery ? (
                 <div>
-                    <Typography variant="h5">{musicQuery.title}</Typography>
-                    <img src={musicQuery.picture_big} height={250} width={460} alt={musicQuery.title}/><br />
-                    <a href={musicQuery.link} target="_blank" rel="noopener noreferrer">Listen</a><br />
-                    <button onClick={getPlaylist}> Next playlist</button>
+                    <ThemeProvider theme={theme}>
+                        <Card>
+                            <CardMedia
+                                component="img"
+                                height="250"
+                                image={musicQuery.picture_big}
+                                alt={musicQuery.picture_big}
+                            />
+                            <CardContent>
+                                <Typography variant="h5">{musicQuery.title}</Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Box m="auto">
+                                    <Button
+                                        sx={{ my: 1, mx: 1 }}
+                                        style={{ backgroundColor: '#536DFE' }}
+                                        variant="contained"
+                                        href={musicQuery.link}
+                                        target="_blank"
+                                    >Listen</Button>
+                                    <Button
+                                        sx={{ my: 1, mx: 1 }}
+                                        style={{ backgroundColor: '#536DFE' }}
+                                        variant="contained"
+                                        onClick={getPlaylist}
+                                    >Next playlist</Button>
+                                </Box>
+                            </CardActions>
+                        </Card>
+                    </ThemeProvider>
                 </div>
             ) : (
                 <div>No playlist here</div>
