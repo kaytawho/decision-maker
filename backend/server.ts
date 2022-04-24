@@ -43,38 +43,23 @@ app.get("/api/deezer/search/playlist", (req: Request<any, any, any, any>, res: R
 });
 
 
-app.get("/api/themoviedb/3/search/movie", (req: Request<any, any, any, any>, res: Response<any>) => {
+app.get("/api/omdb", (req: Request<any, any, any, any>, res: Response<any>) => {
     let searchParams = new URLSearchParams(req.query);
-    searchParams.append(`api_key`, process.env.THEMOVIEDB_KEY)
-    const url = `https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`
+    searchParams.append(`apikey`, process.env.OMDB_KEY)
+    const url = `https://omdbapi.com?${searchParams.toString()}`
     console.log(url)
 
     axios
-        .get(`https://api.themoviedb.org/3/search/movie?${searchParams.toString()}`)
+        .get(`https://omdbapi.com?${searchParams.toString()}`)
         .then((response) => {
-            if (response.data && response.data.results) {
-                let randomiser = Math.floor((Math.random() * response.data.results.length));
-                res.json(response.data.results[randomiser]);
+            if (response.data && response.data.Search) {
+                let randomiser = Math.floor((Math.random() * response.data.Search.length));
+                res.json(response.data.Search[randomiser]);
             } else {
                 res.status(404).json({error: 'No results found'})
             }
         });
 });
-
-// TODO
-// app.get("/api/themoviedb/3/configuration", (req: Request<any, any, any, any>, res: Response<any>) => {
-//     let searchParams = new URLSearchParams(req.query);
-//     searchParams.append(`api_key`, process.env.THEMOVIEDB_KEY)
-//     const url = `https://api.themoviedb.org/3/configuration?${searchParams.toString()}`
-//     console.log(url)
-
-//     axios
-//         .get(`https://api.themoviedb.org/3/configuration?${searchParams.toString()}`)
-//         .then((response) => {
-//             res.json(response.data);
-//         });
-// });
-
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "..", "frontend", "build")));

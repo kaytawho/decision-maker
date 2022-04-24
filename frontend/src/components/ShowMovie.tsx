@@ -8,30 +8,20 @@ interface MovieQueryProps {
 
 export function ShowMovie(props: MovieQueryProps) {
     const [movieQuery, setMovieQuery] = useState<any>("");
-    // const [movieImage, setMovieImage] = useState<any>("") // TODO
     console.log(movieQuery)
 
     function getMovie() {
         axios
-            .get(`http://localhost:3000/api/themoviedb/3/search/movie?query=${props.movieQuery}`)
+            .get(`http://localhost:3000/api/omdb/?s=${props.movieQuery}`)
             .then((response) => {
                 setMovieQuery(response.data);
+                console.log('show movie:', response.data);
             });
     }
-
-    // TODO
-    // function getMovieImage() {
-    //     axios
-    //         .get(`http://localhost:3000/api/themoviedb/3/configuration`)
-    //         .then((response) => {
-    //             setMovieImage(response.data);
-    //         });
-    // }
 
     useEffect(() => {
         if (props.movieQuery !== '') {
             getMovie()
-            // getMovieImage()
     }
 }, [props.movieQuery]);
 
@@ -39,9 +29,8 @@ export function ShowMovie(props: MovieQueryProps) {
         <div>
             { movieQuery ? (
                 <div>
-                    <Typography variant="h5"> {movieQuery.title} </Typography>
-                    <img src="" height={250} width={460} alt={movieQuery.title}/><br />
-                    <Typography variant="body1"> {movieQuery.overview}</Typography>
+                    <Typography variant="h5"> {movieQuery.Title} </Typography>
+                    <img src="" height={250} width={460} alt={movieQuery.Poster}/><br />
                 </div>
             ) : (
                 <div>No movie here </div>
