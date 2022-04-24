@@ -7,7 +7,6 @@ import { DecideFood } from './components/DecideFoodPage';
 import { DecideMusic } from './components/DecideMusicPage';
 import theme from './components/Theme';
 import { Navigation } from './components/Navigation';
-import { Footer } from './components/Footer';
 import { DecideMovie } from './components/DecideMoviePage';
 
 
@@ -60,7 +59,6 @@ function App() {
               </Routes>
           </BrowserRouter>
         </CssBaseline>
-        <Footer />
       </ThemeProvider>
     </div>
   );

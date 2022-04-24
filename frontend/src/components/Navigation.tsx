@@ -1,30 +1,40 @@
-import { Paper } from "@mui/material";
+import * as React from 'react';
+import { AppBar, Button, Paper, Toolbar, Typography } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import { Link } from "react-router-dom";
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: "black",
+    backgroundColor: 'black',
     padding: theme.spacing(2),
     textAlign: 'left',
-    color: "white",
+    color: '#000000',
 }));
 
 export function Navigation() {
     return (
         <div>
-            <Box
-                sx={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                p: 1,
-                m: 1,
-                borderRadius: 1,
-                }}>
-                <Item><a href="/">Home</a></Item>
-                <Item><a href="/decide-food">Eat</a></Item>
-                <Item><a href="/decide-music">Listen</a></Item>
-                <Item><a href="/decide-movie">Watch</a></Item>
-        </Box>
+            <AppBar
+                position="static"
+                color="default"
+                sx={{ color: 'white'}}
+            >
+                <Toolbar sx={{ flexWrap: 'wrap', backgroundColor: 'black', padding: 3}}>
+                    <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}>
+                        DECISI🤔N MAKER
+                        <Typography variant="body2">Created by Kayta, 2022</Typography>
+                    </Typography>
+                        <Box 
+                            sx={{
+                                display: 'inline-flex',
+                                justifyItems: 'flex-end',
+                            }}>
+                            <Item><a href="/">Home</a></Item>
+                            <Item><a href="/decide-food">Eat</a></Item>
+                            <Item><a href="/decide-music">Listen</a></Item>
+                            <Item><a href="/decide-movie">Watch</a></Item>
+                        </Box>
+                </Toolbar>
+            </AppBar>
         </div>
     )
 }
