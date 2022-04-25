@@ -15,7 +15,7 @@ export function ShowMovie(props: MovieQueryProps) {
 
     function getMovie() {
         axios
-            .get(`http://localhost:3000/api/omdb/?s=${props.movieQuery}`)
+            .get(`/api/omdb/?s=${props.movieQuery}`)
             .then((response) => {
                 setmovieResult(response.data);
                 console.log('show movie:', response.data);

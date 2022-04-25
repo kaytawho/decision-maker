@@ -28,10 +28,10 @@ export function Navigation() {
                                 display: 'inline-flex',
                                 justifyItems: 'flex-end',
                             }}>
-                            <Item><a href="/">Home</a></Item>
-                            <Item><a href="/decide-food">Eat</a></Item>
-                            <Item><a href="/decide-music">Listen</a></Item>
-                            <Item><a href="/decide-movie">Watch</a></Item>
+                            <Item><Link to="/">Home</Link></Item>
+                            <Item><Link to="/decide-food">Eat</Link></Item>
+                            <Item><Link to="/decide-music">Listen</Link></Item>
+                            <Item><Link to="/decide-movie">Watch</Link></Item>
                         </Box>
                 </Toolbar>
             </AppBar>

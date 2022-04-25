@@ -14,7 +14,7 @@ export function ShowMusic(props: MusicQueryProps) {
 
     function getPlaylist() {
         axios
-            .get(`http://localhost:3000/api/deezer/search/playlist?q=${props.musicQuery}`)
+            .get(`/api/deezer/search/playlist?q=${props.musicQuery}`)
             .then((response) => {
                 setMusicQuery(response.data);
                 console.log('the response on ShowMusic', response.data)
