@@ -1,6 +1,9 @@
+import { ThemeProvider } from "@emotion/react";
+import { Button, Card, CardActions, CardContent, CardMedia, Icon, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Typography } from "@mui/material";
+import theme from "./Theme";
 
 interface MovieQueryProps {
     movieQuery: string;
@@ -29,8 +32,36 @@ export function ShowMovie(props: MovieQueryProps) {
         <div>
             { movieResult ? (
                 <div>
-                    <Typography variant="h5"> {movieResult.Title} </Typography>
-                    <img src="" height={250} width={460} alt={movieResult.Poster}/><br />
+                    <ThemeProvider theme={theme}>
+                        <Card>
+                            <CardMedia 
+                                component="img"
+                                height="250"
+                                image={movieResult.Poster}
+                                alt={movieResult.Poster}
+                            />
+                            <CardContent>
+                                <Typography variant="h5"> {movieResult.Title} </Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Box m="auto">
+                                    <Button
+                                        sx={{ my: 1, mx: 1 }}
+                                        style={{ backgroundColor: '#536DFE' }}
+                                        variant="contained"
+                                        href={`https://www.imdb.com/title/${movieResult.imdbID}`}
+                                        target="_blank"
+                                    > Visit IMDB</Button>
+                                    <Button
+                                        sx={{ my: 1, mx: 1 }}
+                                        style={{ backgroundColor: '#536DFE' }}
+                                        variant="contained"
+                                        onClick={getMovie}
+                                    > Next movie</Button>
+                                </Box>
+                            </CardActions>
+                        </Card>
+                    </ThemeProvider>
                 </div>
             ) : (
                 <div>No movie here </div>
