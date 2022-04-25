@@ -2,7 +2,10 @@ import axios from "axios";
 import express, { Request, Response } from "express";
 import path from "path";
 
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
 
 const PORT =
     process.env.PORT || (process.env.NODE_ENV === "production" && 3000) || 3001;
