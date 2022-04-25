@@ -21,6 +21,7 @@ export function DecideFood() {
                             <FormControl fullWidth size="medium">
                                 <InputLabel id="dishType">Meal</InputLabel>
                                 <Select 
+                                    sx={{ input: { color: 'black' }}}
                                     value={dishType}
                                     label="dishType"
                                     id="dishType"
