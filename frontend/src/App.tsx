@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import { Home } from './components/HomePage';
@@ -51,6 +51,19 @@ function App() {
         <Navigation />
         <CssBaseline>
           <BrowserRouter>
+              {/* <nav>
+                  <ul>
+                      <li>
+                      <Link to="/">Home</Link>
+                      </li>
+                      <li>
+                      <Link to="/decide-food">About</Link>
+                      </li>
+                      <li>
+                      <Link to="/decide-music">Login</Link>
+                      </li>
+                  </ul>
+              </nav> */}
               <Routes>
                 <Route path="/" element={<HomePage />}/>
                 <Route path="/decide-food" element={<DecideFoodPage />}/>
