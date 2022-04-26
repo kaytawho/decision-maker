@@ -68,7 +68,7 @@ function App() {
                   <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}> DECISI🤔N MAKER
                       <Typography variant="body2">Created by Kayta, 2022</Typography>
                   </Typography>
-                  <Button variant="contained"sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Home</Button>
+                  <Button variant="contained" href="/" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Home</Button>
                     <Button variant="contained" href="/decide-food" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Eat</Button>
                       <Button variant="contained" href="/decide-music" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Listen </Button>
                         <Button variant="contained" href="/decide-movie" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Watch </Button>
