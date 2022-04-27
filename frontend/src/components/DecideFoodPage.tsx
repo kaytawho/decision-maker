@@ -1,4 +1,4 @@
-import { Button, Grid, InputLabel, MenuItem, Paper, Select, Typography } from "@mui/material";
+import { Button, Grid, InputLabel, MenuItem, Paper, Select, SelectChangeEvent, Typography } from "@mui/material";
 import { useState } from "react";
 import { ShowFood } from "./ShowFood";
 import FormControl from '@mui/material/FormControl';
@@ -12,7 +12,13 @@ export function DecideFood() {
     const [diet, setDiet] = useState("vegetarian");
     const [currentDiet, setCurrentDiet] = useState("vegetarian");
 
+    const handleDishChange = (event: SelectChangeEvent) => {
+        setDishType(event.target.value as string);
+    };
 
+    const handleDietChange = (event: SelectChangeEvent) => {
+        setDiet(event.target.value as string);
+    };
 
     return (
         <div>
@@ -29,10 +35,7 @@ export function DecideFood() {
                                     labelId="dishType"
                                     id="dishType"
                                     label="Meal"
-                                    onChange={(event: any) => {
-                                        setDishType(event.target.value)
-                                        console.log(event.target.value)
-                                    }}>
+                                    onChange={handleDishChange}>
                                     <MenuItem value="breakfast">Breakfast</MenuItem>
                                     <MenuItem value="lunch">Lunch</MenuItem>
                                     <MenuItem value="dinner">Dinner</MenuItem>
@@ -48,9 +51,7 @@ export function DecideFood() {
                                                     labelId="diet"
                                                     label="diet"
                                                     id="diet"
-                                                    onChange={(event: any) => {
-                                                        setDiet(event.target.value);
-                                                    }}>
+                                                    onChange={handleDietChange}>
                                                     <MenuItem value="gluten Free">Gluten Free</MenuItem>
                                                     <MenuItem value="ketogenic">Ketogenic</MenuItem>
                                                     <MenuItem value="vegetarian">Vegetarian</MenuItem>
