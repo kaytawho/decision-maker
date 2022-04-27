@@ -7,7 +7,7 @@ import { ShowMovie } from "./ShowMovie";
 
 export function DecideMovie() {
     const [movieQuery, setMovieQuery] = useState("moonlight");
-    const [currentMovieQuery, setCurrentMovieQuery] = useState("");
+    const [currentMovieQuery, setCurrentMovieQuery] = useState("moonlight");
 
     return (
         <div>

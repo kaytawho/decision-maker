@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 
 export function DecideMusic() {
     const [musicQuery, setMusicQuery] = useState("disco");
-    const [currentMusicQuery, setCurrentMusicQuery] = useState("");
+    const [currentMusicQuery, setCurrentMusicQuery] = useState("disco");
 
 
     return (
