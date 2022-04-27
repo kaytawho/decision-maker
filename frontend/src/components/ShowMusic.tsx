@@ -35,7 +35,7 @@ export function ShowMusic(props: MusicQueryProps) {
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="250"
+                                height="100%"
                                 image={musicQuery.picture_big}
                                 alt={musicQuery.picture_big}
                             />
