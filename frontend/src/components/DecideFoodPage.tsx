@@ -5,12 +5,15 @@ import FormControl from '@mui/material/FormControl';
 import { ThemeProvider } from '@emotion/react';
 import theme from "./Theme";
 
+
 export function DecideFood() {
     const [dishType, setDishType] = useState("breakfast");
     const [currentDishType, setCurrentDishType] = useState("breakfast");
     const [diet, setDiet] = useState("vegetarian");
     const [currentDiet, setCurrentDiet] = useState("vegetarian");
-    
+
+
+
     return (
         <div>
             <ThemeProvider theme={theme}>
@@ -23,50 +26,53 @@ export function DecideFood() {
                                 <Select 
                                     sx={{ input: { color: 'black' }}}
                                     value={dishType}
-                                    label="dishType"
+                                    labelId="dishType"
                                     id="dishType"
+                                    label="Meal"
                                     onChange={(event: any) => {
                                         setDishType(event.target.value)
+                                        console.log(event.target.value)
                                     }}>
-                                    <MenuItem value={"breakfast"}>Breakfast</MenuItem>
-                                    <MenuItem value={"lunch"}>Lunch</MenuItem>
-                                    <MenuItem value={"dinner"}>Dinner</MenuItem>
-                                    <MenuItem value={"dessert"}>Dessert</MenuItem>
+                                    <MenuItem value="breakfast">Breakfast</MenuItem>
+                                    <MenuItem value="lunch">Lunch</MenuItem>
+                                    <MenuItem value="dinner">Dinner</MenuItem>
+                                    <MenuItem value="dessert">Dessert</MenuItem>
                                 
                                 </Select>
                             </FormControl><br />
-                        <Typography variant="h5" style={{ paddingTop: 20, paddingBottom: 20}}>Pick me a recipe that is:</Typography>
-                        <FormControl fullWidth size="medium">
-                                <InputLabel id="diet">Diet</InputLabel>
-                                        <Select 
-                                            value={diet}
-                                            label="diet"
-                                            id="diet"
-                                            onChange={(event: any) => {
-                                                setDiet(event.target.value);
-                                            }}>
-                                            <MenuItem value="gluten Free">Gluten Free</MenuItem>
-                                            <MenuItem value="ketogenic">Ketogenic</MenuItem>
-                                            <MenuItem value="vegetarian">Vegetarian</MenuItem>
-                                            <MenuItem value="lacto-vegetarian">Lacto-Vegetarian</MenuItem>
-                                            <MenuItem value="ovo-vegetarian">Ovo-Vegetarian</MenuItem>
-                                            <MenuItem value="vegan">Vegan</MenuItem>
-                                            <MenuItem value="paleo">Paleo</MenuItem>
-                                            <MenuItem value="primal">Primal</MenuItem>
-                                            <MenuItem value="low FODMAP">Low FODMAP</MenuItem>
-                                            <MenuItem value="whole30">Whole30</MenuItem>     
-                                        </Select>
-                                        <br />
-                                            <Button
-                                                sx={{ mt: 2 }}
-                                                style={{ backgroundColor: '#536DFE' }}
-                                                variant="contained"
-                                                    onClick={(event: any) => {
-                                                        setCurrentDishType(dishType);
-                                                        setCurrentDiet(diet);
-                                                    }}
-                                            >Choose my meal</Button>
-                            </FormControl>
+                                <Typography variant="h5" style={{ paddingTop: 20, paddingBottom: 20}}>Pick me a recipe that is:</Typography>
+                                    <FormControl fullWidth size="medium">
+                                        <InputLabel id="diet">Diet</InputLabel>
+                                                <Select 
+                                                    value={diet}
+                                                    labelId="diet"
+                                                    label="diet"
+                                                    id="diet"
+                                                    onChange={(event: any) => {
+                                                        setDiet(event.target.value);
+                                                    }}>
+                                                    <MenuItem value="gluten Free">Gluten Free</MenuItem>
+                                                    <MenuItem value="ketogenic">Ketogenic</MenuItem>
+                                                    <MenuItem value="vegetarian">Vegetarian</MenuItem>
+                                                    <MenuItem value="lacto-vegetarian">Lacto-Vegetarian</MenuItem>
+                                                    <MenuItem value="ovo-vegetarian">Ovo-Vegetarian</MenuItem>
+                                                    <MenuItem value="vegan">Vegan</MenuItem>
+                                                    <MenuItem value="paleo">Paleo</MenuItem>
+                                                    <MenuItem value="primal">Primal</MenuItem>
+                                                    <MenuItem value="low FODMAP">Low FODMAP</MenuItem>
+                                                    <MenuItem value="whole30">Whole30</MenuItem>     
+                                                </Select>
+                                                <br />
+                                                    <Button
+                                                        sx={{ mt: 2 }}
+                                                        style={{ backgroundColor: '#536DFE' }}
+                                                        variant="contained"
+                                                        onClick={(event: any) => {
+                                                                setCurrentDishType(dishType);
+                                                                setCurrentDiet(diet);
+                                                        }}
+                                                    >Choose my meal</Button>
+                                    </FormControl>
                     </Paper>
                 </Grid>
                 <Grid item>
