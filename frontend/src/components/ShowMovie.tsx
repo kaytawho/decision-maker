@@ -36,7 +36,7 @@ export function ShowMovie(props: MovieQueryProps) {
                         <Card>
                             <CardMedia 
                                 component="img"
-                                height="250"
+                                height="100%"
                                 image={movieResult.Poster}
                                 alt={movieResult.Poster}
                             />

@@ -35,7 +35,7 @@ export function ShowFood(props: FoodProps) {
                         <Card>
                             <CardMedia
                                 component="img"
-                                height="250"
+                                height="100%"
                                 image={recipe.recipes[0]["image"]}
                                 alt={recipe.recipes[0]["image"]}
                                 />
