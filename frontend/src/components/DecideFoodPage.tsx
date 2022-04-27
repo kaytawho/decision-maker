@@ -30,11 +30,11 @@ export function DecideFood() {
                             <FormControl fullWidth size="medium">
                                 <InputLabel id="dishType">Meal</InputLabel>
                                 <Select 
-                                    sx={{ input: { color: 'black' }}}
                                     value={dishType}
                                     labelId="dishType"
                                     id="dishType"
                                     label="Meal"
+                                    sx={{ color: '#000000' }}
                                     onChange={handleDishChange}>
                                     <MenuItem value="breakfast">Breakfast</MenuItem>
                                     <MenuItem value="lunch">Lunch</MenuItem>
@@ -51,6 +51,7 @@ export function DecideFood() {
                                                     labelId="diet"
                                                     label="diet"
                                                     id="diet"
+                                                    sx={{ color: '#000000' }}
                                                     onChange={handleDietChange}>
                                                     <MenuItem value="gluten Free">Gluten Free</MenuItem>
                                                     <MenuItem value="ketogenic">Ketogenic</MenuItem>
