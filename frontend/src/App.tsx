@@ -65,8 +65,8 @@ function App() {
           <CssBaseline>
             <AppBar position="static" color="default" sx={{ color: 'white'}}>
               <Toolbar sx={{ flexWrap: 'wrap', backgroundColor: 'black', padding: 3}}>
-                  <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}> DECISI🤔N MAKER
-                      <Typography variant="body2">Created by Kayta, 2022</Typography>
+                  <Typography variant="h2" color="inherit" noWrap sx={{ flexGrow: 1 }}> DECISI🤔N MAKER
+                      <Typography variant="h6">Created by Kayta, 2022</Typography>
                   </Typography>
                   <Button variant="contained" href="/" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Home</Button>
                     <Button variant="contained" href="/decide-food" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Eat</Button>

@@ -1,27 +1,20 @@
-import { Link } from "react-router-dom";
 import Paper from '@mui/material/Paper';
 import { Button, Grid, Typography } from "@mui/material";
+import { textAlign } from '@mui/system';
 
 
 export function Home() {
     return (
         <div>
             <Paper>
-                <Grid container spacing={2} padding={2} justifyContent="center">
-                    <Grid item style={{ height: 240, width: 400, padding: 20}}>
-                        <Typography variant="h1" textAlign="right">Decision fatigue?</Typography>
-                        <Typography variant="h4" textAlign="right">Let's do the heavy lifting for you.</Typography>
+                <Grid container padding={10} justifyContent="center">
+                    <Grid item sx={{ height: "50%", width: 450 }}>
+                        <Typography variant="h1" textAlign="left">Decision fatigue?</Typography>
                     </Grid>
-                    <Grid item style={{ height: 240, width: 400, padding: 20}}>
-                        <Link to="decide-food">
-                            <button>Decide what to cook</button>
-                            </Link><br />
-                        <Link to="decide-music">
-                            <button>Decide what to listen to</button>
-                        </Link><br />
-                        <Link to="/decide-movie">
-                            <button>Decide what to watch</button>
-                        </Link>
+                    <Grid item sx={{ height: "50%", width: 400, alignItems: 'center'}} >
+                        <Typography variant="h3" textAlign="left">Let's do the heavy lifting for you.</Typography>
+                        <Typography variant="h6" textAlign="left" sx={{ mt: 2}}>This is where life's most important decisions are made.</Typography>
+                        <Button variant="outlined" href="/decide-food" sx={{ mt: 2, backgroundColor: '#009688', color: 'white' }}>Get started </Button>
                     </Grid>
                 </Grid>
             </Paper>
