@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Icon, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -26,7 +26,7 @@ export function ShowMovie(props: MovieQueryProps) {
         if (props.movieQuery !== '') {
             getMovie()
     }
-}, [props.movieQuery]);
+    }, [props.movieQuery]);
 
     return (
         <div>

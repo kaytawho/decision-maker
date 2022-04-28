@@ -30,7 +30,7 @@ export function DecideMusic() {
                                         sx={{ mt: 2 }}
                                         style={{ backgroundColor: '#536DFE' }}
                                         variant="contained"
-                                            onClick={(event: any) => {
+                                        onClick={(event: any) => {
                                                 setCurrentMusicQuery(musicQuery)
                                     }}>Decide</Button>
                         </FormControl>
