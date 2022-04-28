@@ -42,6 +42,7 @@ export function ShowMovie(props: MovieQueryProps) {
                             />
                             <CardContent>
                                 <Typography variant="h5"> {movieResult.Title} </Typography>
+                                <Typography variant="body1">🎥 Released in {movieResult.Year} </Typography>
                             </CardContent>
                             <CardActions>
                                 <Box m="auto">
