@@ -41,9 +41,9 @@ export function ShowFood(props: FoodProps) {
                                 />
                                 <CardContent>
                                     <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
-                                    <Box sx={{ display: "flex", justifyContent: "center"}}>
-                                        <Typography variant="body1">🕑 Ready in {recipe.recipes[0]["readyInMinutes"]} minutes</Typography>
-                                            <Typography variant="body1">🍴 Serves {recipe.recipes[0]["servings"]}</Typography>
+                                    <Box sx={{ display: "flex"}}>
+                                        <Typography variant="body1">🕑 Ready in <em>{recipe.recipes[0]["readyInMinutes"]}</em> minutes</Typography>
+                                            <Typography variant="body1">🍴 Serves <em>{recipe.recipes[0]["servings"]}</em></Typography>
                                     </ Box>
                                 </CardContent>
                                     <CardActions>
@@ -68,7 +68,7 @@ export function ShowFood(props: FoodProps) {
                 </div>
             ) : (
                     <div>
-                        <Box sx={{ display: "flex", justifyContent: "center"}}>
+                        <Box sx={{ display: "flex", justifyContent: ""}}>
                             <CircularProgress sx={{ color: '#536DFE' }} /> 
                         </Box>
                     </div>
