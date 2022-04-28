@@ -47,15 +47,13 @@ export function ShowMovie(props: MovieQueryProps) {
                             <CardActions>
                                 <Box m="auto">
                                     <Button
-                                        sx={{ my: 1, mx: 1 }}
-                                        style={{ backgroundColor: '#536DFE' }}
+                                        sx={{ my: 1, mx: 1, backgroundColor: '#536DFE' }}
                                         variant="contained"
                                         href={`https://www.imdb.com/title/${movieResult.imdbID}`}
                                         target="_blank"
                                     > Visit IMDB</Button>
                                     <Button
-                                        sx={{ my: 1, mx: 1 }}
-                                        style={{ backgroundColor: '#536DFE' }}
+                                        sx={{ my: 1, mx: 1, backgroundColor: '#536DFE' }}
                                         variant="contained"
                                         onClick={getMovie}
                                     > Next movie</Button>
