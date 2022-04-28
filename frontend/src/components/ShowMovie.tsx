@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import { Button, Card, CardActions, CardContent, CardMedia, Icon, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Icon, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -64,7 +64,11 @@ export function ShowMovie(props: MovieQueryProps) {
                     </ThemeProvider>
                 </div>
             ) : (
-                <div>No movie here </div>
+                <div>
+                    <Box sx={{ display: "flex", justifyContent: "center"}}>
+                        <CircularProgress sx={{ color: '#536DFE' }} /> 
+                    </Box>
+                </div>
             )}
         </div>
     )
