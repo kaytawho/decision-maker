@@ -40,10 +40,10 @@ export function ShowFood(props: FoodProps) {
                                 alt={recipe.recipes[0]["image"]}
                                 />
                                 <CardContent>
-                                    <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
+                                    <Typography variant="h5">{recipe.recipes[0].title}</Typography>
                                     <Box sx={{ display: "flex"}}>
-                                        <Typography variant="body1">🕑 Ready in {recipe.recipes[0]["readyInMinutes"]} minutes</Typography>
-                                            <Typography variant="body1">🍴 Serves {recipe.recipes[0]["servings"]}</Typography>
+                                        <Typography variant="body1">🕑 Ready in {recipe.recipes[0].readyInMinutes} minutes</Typography>
+                                            <Typography variant="body1">🍴 Serves {recipe.recipes[0].servings}</Typography>
                                     </ Box>
                                 </CardContent>
                                     <CardActions>
