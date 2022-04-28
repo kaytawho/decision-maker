@@ -10,7 +10,7 @@ export function Home() {
                     <Grid item sx={{ height: "100%", width: 450 }}>
                         <Typography variant="h1" textAlign="left">Decision fatigue?</Typography>
                             <Typography variant="h4" textAlign="left">Let's do the heavy lifting for you.</Typography>
-                                    <Button variant="outlined" href="/decide-food" sx={{ mt: 2 , backgroundColor: 'primary.light', color: 'white' }}>Get started </Button>
+                                    <Button variant="contained" href="/decide-food" sx={{ mt: 1, backgroundColor: '#536DFE' }}>Get started </Button>
                                         </Grid>
                                             <Grid item sx={{ height: "50%", width: 400, alignItems: 'center'}} >
                                                 <img src={require("./static/people-decisions.png")} alt="illustration of four people" width="400" height="400" />
