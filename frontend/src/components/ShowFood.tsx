@@ -41,7 +41,7 @@ export function ShowFood(props: FoodProps) {
                                 />
                                 <CardContent>
                                     <Typography variant="h5">{recipe.recipes[0]["title"]}</Typography>
-                                    <Box m="auto">
+                                    <Box sx={{ display: "flex", justifyContent: "center"}}>
                                         <Typography variant="body1">🕑 Ready in {recipe.recipes[0]["readyInMinutes"]} minutes</Typography>
                                             <Typography variant="body1">🍴 Serves {recipe.recipes[0]["servings"]}</Typography>
                                     </ Box>
