@@ -66,8 +66,7 @@ export function DecideFood() {
                                                 </Select>
                                                 <br />
                                                     <Button
-                                                        sx={{ mt: 2 }}
-                                                        style={{ backgroundColor: '#536DFE' }}
+                                                        sx={{ mt: 2, backgroundColor: '#536DFE'  }}
                                                         variant="contained"
                                                         onClick={(event: any) => {
                                                                 setCurrentDishType(dishType);

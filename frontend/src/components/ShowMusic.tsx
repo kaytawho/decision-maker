@@ -45,15 +45,13 @@ export function ShowMusic(props: MusicQueryProps) {
                             <CardActions>
                                 <Box m="auto">
                                     <Button
-                                        sx={{ my: 1, mx: 1 }}
-                                        style={{ backgroundColor: '#536DFE' }}
+                                        sx={{ my: 1, mx: 1, backgroundColor: '#536DFE'  }}
                                         variant="contained"
                                         href={musicQuery.link}
                                         target="_blank"
                                     >Listen</Button>
                                     <Button
-                                        sx={{ my: 1, mx: 1 }}
-                                        style={{ backgroundColor: '#536DFE' }}
+                                        sx={{ my: 1, mx: 1, backgroundColor: '#536DFE'  }}
                                         variant="contained"
                                         onClick={getPlaylist}
                                     >Next playlist</Button>

@@ -49,15 +49,13 @@ export function ShowFood(props: FoodProps) {
                                     <CardActions>
                                         <Box m="auto">
                                             <Button
-                                                sx={{ my: 1, mx: 1 }}
-                                                style={{ backgroundColor: '#536DFE' }}
+                                                sx={{ my: 1, mx: 1, backgroundColor: '#536DFE' }}
                                                 variant="contained"
                                                 href={recipe.recipes[0]["spoonacularSourceUrl"]}
                                                 target="_blank"
                                             > Make recipe</Button>
                                             <Button
-                                                sx={{ my: 1, mx: 1 }}
-                                                style={{ backgroundColor: '#536DFE' }}
+                                                sx={{ my: 1, mx: 1, backgroundColor: '#536DFE' }}
                                                 variant="contained"
                                                 onClick={getRecipe}
                                             > Next recipe</Button>
@@ -68,7 +66,7 @@ export function ShowFood(props: FoodProps) {
                 </div>
             ) : (
                     <div>
-                        <Box sx={{ display: "flex", justifyContent: ""}}>
+                        <Box sx={{ display: "flex", justifyContent: "center"}}>
                             <CircularProgress sx={{ color: '#536DFE' }} /> 
                         </Box>
                     </div>

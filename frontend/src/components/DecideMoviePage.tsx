@@ -25,8 +25,7 @@ export function DecideMovie() {
                                     setMovieQuery(event.target.value);
                                 }}></TextField>
                                 <Button 
-                                    sx={{ mt: 2 }}
-                                    style={{ backgroundColor: '#536DFE' }}
+                                    sx={{ mt: 2, backgroundColor: '#536DFE'  }}
                                     variant="contained"
                                     onClick={(event: any) => {
                                         setCurrentMovieQuery(movieQuery)
