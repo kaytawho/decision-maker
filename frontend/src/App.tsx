@@ -63,10 +63,10 @@ function App() {
     <div>
       <ThemeProvider theme={theme}>
           <CssBaseline>
-            <AppBar position="static" color="default" sx={{ color: 'white'}}>
-              <Toolbar sx={{ flexWrap: 'wrap', backgroundColor: 'black', padding: 3}}>
-                  <Typography variant="h4" color="inherit" noWrap sx={{ flexGrow: 1 }}> DECISI🤔N MAKER
-                      <Typography variant="h6">Created by <a href="https://github.com/kaytawho">Kayta</a>, 2022</Typography>
+            <AppBar position="static" sx={{ color: 'white'}}>
+              <Toolbar sx={{ flexWrap: 'wrap', padding: 3}}>
+                  <Typography variant="h4" noWrap sx={{ flexGrow: 1 }}> DECISI🤔N MAKER
+                      <Typography variant="h6">Created by <a href="https://github.com/kaytawho" target="_blank">Kayta</a>, 2022</Typography>
                   </Typography>
                   <Button variant="contained" href="/" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Home</Button>
                     <Button variant="contained" href="/decide-food" sx={{ p: 1, m: 1 }} style={{ backgroundColor: '#536DFE' }}>Eat</Button>
